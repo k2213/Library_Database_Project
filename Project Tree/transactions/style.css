@@ -1,0 +1,438 @@
+body {
+    height: 100%;
+    background-color: #1e1e1e;
+    color: #d3d3d3;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c2c2c;
+    padding: 10px;
+    position: relative;
+}
+
+.logout {
+    background: none;
+    border: none; 
+    color: #d3d3d3; 
+    font-size: 13px; 
+    cursor: pointer; 
+    padding: 0; 
+}
+
+.logout:hover {
+    color: #1e90ff;
+    text-decoration: underline; 
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-grow: 1;
+    margin-left: 110px;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: #d3d3d3;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav-button.active {
+    font-weight: bolder;
+    line-height: 1;
+    color: #1e90ff;
+    font-size: x-large;
+    padding: 10px 20px;
+    margin-bottom: 2px;
+    margin-left: -25px;
+    margin-right: 28px;
+    display: inline-block;
+}
+
+.nav-button:hover {
+    color: #3b3b3b;
+    font-weight: bold;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-image {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.title {
+    margin-left: 25px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+}
+
+.stats .stat-item {
+    margin-right: 20px;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin-right: 25px;
+}
+
+.search-bar input {
+    padding: 10px;
+    background-color: #313131;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    width: 40%;
+    height: 12px;
+}
+
+#result {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#searchResultsTable th:nth-child(1),
+#searchResultsTable td:nth-child(1) {
+    width: 25px;
+}
+
+#searchResultsTable th:nth-child(4),
+#searchResultsTable td:nth-child(4) {
+    width: 200px;
+}
+
+#searchResultsTable th:nth-child(6),
+#searchResultsTable td:nth-child(6) {
+    width: 250px;
+}
+
+#searchResultsTable th:not(:nth-child(1)):not(:nth-child(4)):not(:nth-child(6)),
+#searchResultsTable td:not(:nth-child(1)):not(:nth-child(4)):not(:nth-child(6)) {
+    width: 50px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: 90px;
+}
+
+button:hover {
+    color: #3b3b3b;
+    font-weight: bold;
+}
+
+button.export, button.filter, button.manage-btn {
+    background-color: #313131;
+    color: #fff;
+}
+
+button.new-add {
+    background-color: #1e90ff;
+    color: #fff;
+}
+
+.table-section {
+    width: 98%;
+    margin: 0 auto; 
+}
+
+table {
+    width: 100%;
+    background-color: #2c2c2c;
+    color: #fff;
+    border-collapse: separate; 
+    border-spacing: 0;
+    border-radius: 15px; 
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12.5px;
+    border-bottom: 1px solid #444;
+    text-align: center;
+}
+
+table th:not(:nth-child(1)):not(:nth-child(4)):not(:nth-child(6)),
+table td:not(:nth-child(1)):not(:nth-child(4)):not(:nth-child(6)) {
+    width: 1px;
+}
+
+table th:nth-child(1), table td:nth-child(1) {
+    width: 1px;
+}
+
+table th:nth-child(4), table td:nth-child(4) {
+    width: 80px; 
+}
+
+table th:nth-child(6), table td:nth-child(6) {
+    width: 160px; 
+}
+
+table tr:nth-child(even) {
+    background-color: #333;
+}
+
+table tr:hover {
+    background-color: #444;
+}
+
+footer {
+    background-color: #2c2c2c;
+    text-align: center;
+    padding: 10px;
+    color: #898989;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    position: fixed; 
+    margin-top: 20px;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+#newAddTransactionModal .modal-content {
+    background-color: #4a4a4a; 
+    margin: 10% auto; 
+    padding: 10px; 
+    border-radius: 10px; 
+    width: 20%; 
+    min-height: 400px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+#manageTransactionModal .modal-content {
+    background-color: #4a4a4a; 
+    margin: 7% auto; 
+    padding: 20px; 
+    border-radius: 10px; 
+    width: 20%; 
+    min-height: 400px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+#searchModal .modal-content {
+    background-color: #4a4a4a; 
+    margin: 10% auto; 
+    padding: 20px; 
+    border-radius: 10px; 
+    width: 90%; 
+    min-height: 400px; 
+    max-height: 500px; 
+    overflow-y: auto; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.close {
+    color: #aaa; 
+    float: right; 
+    font-size: 28px; 
+    font-weight: bold; 
+}
+
+.close:hover,
+.close:focus {
+    color: #fff; 
+    text-decoration: none; 
+    cursor: pointer; 
+}
+
+h2 {
+    text-align: center; 
+    color: #fff; 
+}
+
+form {
+    display: flex; 
+    flex-direction: column; 
+    gap: 5px; 
+}
+
+label {
+    font-weight: bold; 
+    color: #bfbfbf; 
+    margin: 0 15px;
+    margin-top: 5px;
+}
+
+#manageTransactionModal input[type="text"],
+#manageTransactionModal input[type="date"] {
+    padding: 8px; 
+    border: 1px solid #333; 
+    border-radius: 5px; 
+    background-color: #2c2c2c; 
+    color: #fff; 
+    width: 85%; 
+    margin: 0 15px;
+}
+
+#manageTransactionForm select {
+    width: 90.5%; 
+    margin: 0 15px;
+    padding: 8px; 
+    background-color: #2c2c2c; 
+    color: #fff; 
+    border: 1px solid #333; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 14px; 
+}
+
+#manageTransactionForm button {
+    background-color: #1e90ff; 
+    color: white; 
+    padding: 8px; 
+    border-radius: 5px; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s; 
+    margin: 0 15px;
+    box-sizing: border-box; 
+}
+
+#manageTransactionForm .button-container {
+    display: flex; 
+    margin-top: 15px; 
+}
+
+#manageTransactionForm button:hover {
+    background-color: #007bff; 
+}
+
+#manageTransactionForm .submit-button,
+#manageTransactionForm .delete-btn {
+    width: 42%; 
+    display: inline-block; 
+    margin-right: 2%; 
+}
+
+#manageTransactionForm .delete-btn:last-child {
+    margin-right: 0; 
+}
+
+#newAddTransactionModal input[type="text"],
+#newAddTransactionModal input[type="date"] {
+    padding: 8px; 
+    border: 1px solid #333; 
+    border-radius: 5px; 
+    background-color: #2c2c2c; 
+    color: #fff; 
+    width: 85%; 
+    margin: 0 15px;
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 10px; 
+    border: 1px solid #333; 
+    border-radius: 5px; 
+    background-color: #2c2c2c; 
+    color: #fff; 
+    width: 100%; 
+}
+
+input[type="submit"] {
+    background-color: #1e90ff; 
+    color: white; 
+    padding: 2.5%; 
+    margin: 15px;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+input[type="submit"]:hover {
+    background-color: #007bff; 
+}
+
+button.submit-button {
+    background-color: #1e90ff; 
+    color: white; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; 
+}
+
+button.submit-button:hover {
+    background-color: #007bff; 
+}
+
+.pagination {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 5px 0; 
+    margin-left: 11px;
+}
+
+.pagination .current-page {
+    margin: 0 10px; 
+    color: #d6d6d6; 
+    line-height: 35px; 
+    padding-top: 6px; 
+}
+
+.pagination button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: #1e1e1e;
+    color: #d6d6d6;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 5px;
+    margin-right: 11px;
+}
+
+.pagination button:hover {
+    background-color: #1e1e1e;
+}
+
+.pagination .current-page {
+    margin: 0 10px;
+}
